@@ -26,10 +26,12 @@ namespace Task_2
                                       .OrderByDescending(i => i.Count);
 
                 // Выводим топ-10 самых встречаемых слов
-                for (int i = 0; i < 10; i++)
+                for (int i = 0; i < wordGroups.Count(); i++)
                 {
                     Console.WriteLine($"Слово '{wordGroups.ElementAt(i).Word}' " +
                         $"встречается {wordGroups.ElementAt(i).Count} раз(а)");
+                    
+                    if (i == 9) break;
                 }
 
                 Console.WriteLine("Нажмите <Enter>...");
