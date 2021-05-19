@@ -18,7 +18,7 @@ namespace Task_2
                 // Преобразуем текст в массив слов без знаков пунктуации
                 var noPunctuationText = new string(text.Where(c => !char.IsPunctuation(c)).ToArray());
                 var delimiters = new char[] { ' ', '\n', '\r' };
-                var words = noPunctuationText.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
+                var words = noPunctuationText.ToLower().Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
 
                 // Группируем слова по частоте встречаемости
                 var wordGroups = words.GroupBy(i => i)
