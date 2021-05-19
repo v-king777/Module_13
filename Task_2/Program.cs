@@ -29,7 +29,7 @@ namespace Task_2
                 for (int i = 0; i < 10; i++)
                 {
                     Console.WriteLine($"Слово '{wordGroups.ElementAt(i).Word}' " +
-                        $"встречается {wordGroups.ElementAt(i).Count} раз");
+                        $"встречается {wordGroups.ElementAt(i).Count} раз(а)");
                 }
 
                 Console.WriteLine("Нажмите <Enter>...");
