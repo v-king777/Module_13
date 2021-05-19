@@ -19,7 +19,7 @@ namespace Task_1
 
                 // Преобразуем текст в массив слов без знаков пунктуации
                 var noPunctuationText = new string(text.Where(c => !char.IsPunctuation(c)).ToArray());
-                var delimiters = new char[] { ' ', '\n' };
+                var delimiters = new char[] { ' ', '\n', '\r' };
                 var words = noPunctuationText.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
 
                 // Создаём простой список из массива
