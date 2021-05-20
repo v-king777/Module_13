@@ -21,17 +21,14 @@ namespace Task_2
                 var words = noPunctuationText.ToLower().Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
 
                 // Группируем слова по частоте встречаемости
-                var wordGroups = words.GroupBy(i => i)
-                                      .Select(i => new { Word = i.Key, Count = i.Count() })
-                                      .OrderByDescending(i => i.Count);
+                var wordGroups = words.GroupBy(w => w)
+                                      .Select(w => new { Word = w.Key, Count = w.Count() })
+                                      .OrderByDescending(w => w.Count);
 
                 // Выводим топ-10 самых встречаемых слов
-                for (int i = 0; i < wordGroups.Count(); i++)
+                foreach (var w in wordGroups.Take(10))
                 {
-                    Console.WriteLine($"Слово '{wordGroups.ElementAt(i).Word}' " +
-                        $"встречается {wordGroups.ElementAt(i).Count} раз(а)");
-                    
-                    if (i == 9) break;
+                    Console.WriteLine($"Слово '{w.Word}' встречается {w.Count} раз(а)");
                 }
 
                 Console.WriteLine("Нажмите <Enter>...");
